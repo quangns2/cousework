@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CheapDeals - Connecting You with the Best Phones and Plans</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -17,8 +18,60 @@
       </div>
 
       <!-- Navigation Links -->
-      <nav class="nav-links">
-        <a href="#">Mobile <span class="dropdown-arrow">&#9662;</span></a>
+      <header class="navbar">
+        <div class="container">
+          <div class="nav-item">
+            <a href="#" class="dropdown-toggle">Mobile <span class="dropdown-arrow">&#9662;</span></a>
+            <div class="dropdown-menu">
+              <div class="column">
+                <h3>Devices</h3>
+                <a href="#">Shop all Phones</a>
+                <a href="#">iPhone</a>
+                <a href="#">Samsung Galaxy Phones</a>
+                <a href="#">Apple</a>
+                <a href="#">Samsung</a>
+                <a href="#">Android</a>
+                <a href="#">Tablet</a>
+                <a href="#">Low-Cost Phones</a>
+              </div>
+              <div class="column">
+                <h3>Plans</h3>
+                <a href="#">Shop SIM Only Plans</a>
+                <a href="#">Add-ons</a>
+                <a href="#">Students</a>
+              </div>
+              <div class="column">
+                <h3>Services</h3>
+                <a href="#">Upgrade your Device</a>
+                <a href="#">Add Another Service</a>
+                <a href="#">Change your Plan</a>
+                <a href="#">International Roaming</a>
+                <a href="#">International Calls</a>
+                <a href="#">Vodafone Device Care</a>
+                <a href="#">Device safety and security with Norton</a>
+                <a href="#">Bundle & Save</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- JavaScript để mở/đóng menu -->
+      <script>
+        document.querySelector('.dropdown-toggle').addEventListener('click', function(event) {
+          event.preventDefault();
+          const dropdownMenu = document.querySelector('.dropdown-menu');
+          dropdownMenu.classList.toggle('show'); // Thêm hoặc bỏ class 'show' để hiển thị menu
+        });
+    
+        // Đóng dropdown menu khi nhấn ra ngoài
+        window.addEventListener('click', function(event) {
+          const dropdownMenu = document.querySelector('.dropdown-menu');
+          if (!event.target.closest('.nav-item')) {
+            dropdownMenu.classList.remove('show');
+          }
+        });
+      </script>
         <a href="#">Data & Internet <span class="dropdown-arrow">&#9662;</span></a>
         <a href="#">Tablets <span class="dropdown-arrow">&#9662;</span></a>
         <a href="#">My Account <span class="dropdown-arrow">&#9662;</span></a>
@@ -27,9 +80,9 @@
 
       <!-- Icons -->
       <div class="nav-icons">
-        <a href="#" class="icon"><img src="image/cart-icon.png" alt="Cart Icon"></a>
-        <a href="#" class="icon"><img src="image/search-icon.png" alt="Search Icon"></a>
-        <a href="#" class="icon"><img src="image/user-icon.png" alt="User Icon"></a>
+        <a href="#" class="icon"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="icon"><i class="fas fa-search"></i></a>
+        <a href="#" class="icon"><i class="fas fa-user"></i></a>
       </div>
     </div>
   </header>
